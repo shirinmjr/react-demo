@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.lord-movies {
+  border: 10px solid #fc5572;
+}
+.main-contents {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  border: 1px solid pink;
+  background-color: darkgray;
+  color: #d96c77;
+}
+img {
+  padding: 10px;
+  width: 200px;
+  margin: 20 px;
+}
