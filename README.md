@@ -4,19 +4,19 @@ React is a javascript library that gives us the ability to build some awesome si
 
 
 Before creating your Repo, create a new React App in our U2 directory with `npm create vite@latest` command
-
-```
+```bash
 npm create vite@latest
 ```
-
 Done. Now run:
-
-```
+```bash
   cd react-demo
   npm install
   npm run dev
 ```
-
+Open the browser and navigate to the following to see the app is running succesfully:
+```bash
+http://localhost:5173/
+```
 Out of the box we get a few files and folders:
 
 - `src`
@@ -31,7 +31,7 @@ Out of the box we get a few files and folders:
  
 
 Now connect a Repo
-```
+```bash
   git init
   git add .
   git commit -m "first commit"
