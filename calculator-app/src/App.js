@@ -17,18 +17,24 @@ function App() {
   }
 
   function times(e) {
+    e.preventDefault();
+    console.log(resultRef.current.value);
+    console.log(inputRef);
     setResult((result) => result * Number(inputRef.current.value));
   }
 
   function divide(e) {
+    e.preventDefault();
     setResult((result) => result / Number(inputRef.current.value));
   }
 
   function resetInput(e) {
-    //resetInput function
+    e.preventDefault();
+    inputRef.current.value = "";
   }
 
   function resetResult(e) {
+    e.preventDefault();
     setResult(0);
   }
 
@@ -37,9 +43,14 @@ function App() {
       <div>
         <h1>Simplest Working Calculator</h1>
       </div>
-      <text className="result">{result}</text>
+
       <form>
-        <p ref={resultRef}>{/* add the value of the current total */}</p>
+        <div className="result-style">
+          Result:
+          <p className="result" ref={resultRef}>
+            {result}
+          </p>
+        </div>
         <input
           pattern="[0-9]"
           ref={inputRef}

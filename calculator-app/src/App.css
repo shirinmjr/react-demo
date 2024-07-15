@@ -11,6 +11,17 @@ input {
   display: block;
   margin-bottom: 20px;
 }
+.result {
+  border: 3px solid green;
+  max-width: 20%;
+  border-radius: 0.5em;
+  padding: 10px 50px;
+}
+.result-style {
+  display: flex;
+  justify-content: start;
+  justify-items: center;
+}
 button {
   border: 1px solid gray;
   background: whitesmoke;
