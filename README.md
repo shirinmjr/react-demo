@@ -10,6 +10,26 @@ To install run the following command in your terminal:
 npm i react-router-dom@6
 ```
 
+### Media Packages
+
+To install run the following command in your terminal:
+
+```bash
+npm install react-player
+```
+
+and import the following in your code:
+
+```bash
+import ReactPlayer from "react-player";
+```
+
+or for example if it's only Youtube:
+
+```bash
+import ReactPlayer from "react-player/youtube";
+```
+
 ## VITE Project
 
 Before creating your Repo, create a new React App in our U2 directory with `npm create vite@latest` command
