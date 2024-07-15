@@ -14,7 +14,13 @@ Once a user types into the input field, they will then have to update the total 
 
 - division
 
-# About this project
+### Here is a view of the app:
+
+  <img src='./assets/app-img.png'>
+
+---
+
+## About this project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
