@@ -5,13 +5,20 @@ import { Box } from "@mui/material";
 export default function NavBar() {
   const navBarData = [
     {
-      title: "Projects",
+      title: "About Me",
+      href: "about-me",
     },
     {
       title: "Resume",
+      href: "resume",
     },
     {
-      title: "About Me",
+      title: "Projects",
+      href: "project",
+    },
+    {
+      title: "About This Website",
+      href: "about-this-website",
     },
   ];
 
@@ -47,7 +54,7 @@ export default function NavBar() {
                 return (
                   <li key={index}>
                     <Link
-                      //   href={item.href}
+                      to={item.href}
                       //   smooth={true}
                       //   duration={800}
                       //   onClick={() => {

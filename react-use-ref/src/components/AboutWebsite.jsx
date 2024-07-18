@@ -1,7 +1,7 @@
 const Section3 = () => {
   return (
-    <div>
-      <h1>This is the Section III</h1>
+    <div className="h-96">
+      <h1>About This Website</h1>
     </div>
   );
 };
