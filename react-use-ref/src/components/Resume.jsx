@@ -1,7 +1,7 @@
 import { resumeData } from "./resumeData";
 const Resume = () => {
   return (
-    <div className="flex flex-col text-left h-97 py-20">
+    <div id="resume" className="flex flex-col text-left h-97 py-20">
       <h1>Resume</h1>
       {resumeData.map((data, index) => {
         return (

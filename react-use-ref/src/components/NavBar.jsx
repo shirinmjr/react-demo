@@ -1,6 +1,7 @@
+"use client";
 import { Link } from "react-scroll";
 import { Box } from "@mui/material";
-//import Image from "next/image";
+//import imgSrc from "../../public/profile-dummy.png";
 
 export default function NavBar() {
   const navBarData = [
@@ -26,15 +27,16 @@ export default function NavBar() {
     <header className="fixed z-50 w-full top-0 left-0 bg-white text-black font-source-sans-3 shadow-md py-[10px] px-[10px] min-h-[50px]">
       <div className="flex flex-wrap items-center justify-around relative bg-white text-black">
         <a href="/" className="block">
+          {/* <img src={imgSrc} /> */}
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {/* <Image
-              src={AtlasLogo}
-              className="atlas-logo"
+            <img
+              src="/profile-dummy.png"
+              className="atlas-logo rounded-full"
               alt="Atlas Logo"
-              width={170}
-              height={80}
+              width={50}
+              height={50}
               priority
-            /> */}
+            />
           </Box>
           <Box sx={{ display: { xs: "block", sm: "none" } }}>
             {/* <Image

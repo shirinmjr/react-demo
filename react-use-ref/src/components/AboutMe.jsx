@@ -4,7 +4,7 @@ import React from "react";
 import imgSrc from "../../public/profile-dummy.png";
 const AboutMe = () => {
   return (
-    <div className="justify-start h-96 pb-40 ">
+    <div id="about-me" className="justify-start h-96 pb-40 ">
       <section>
         <div className="flex text-left">
           <img src={imgSrc} />
