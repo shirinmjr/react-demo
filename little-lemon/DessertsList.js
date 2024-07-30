@@ -1,7 +1,8 @@
 function DessertsList(props) {
   // Implement the component here.
-  let sortProps = props.data.sort((a, b) => a.calories - b.calories);
-  let menu = sortProps.filter((desert) => desert.calories < 500);
+  let menu = props.data
+    .filter((desert) => desert.calories < 500)
+    .sort((a, b) => a.calories - b.calories);
   return (
     <ul>
       {menu.map((dessert) => (
