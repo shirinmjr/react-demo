@@ -1,14 +1,14 @@
-import { validateEmail } from "../util";
 import "../App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { validateEmail } from "../utils";
 
-const SignUp = () => {
-  const PasswordErrorMessage = () => {
-    return (
-      <p className="FieldError">Password should have at least 8 characters</p>
-    );
-  };
+const PasswordErrorMessage = () => {
+  return (
+    <p className="FieldError">Password should have at least 8 characters</p>
+  );
+};
 
+function SignUp() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,9 +18,14 @@ const SignUp = () => {
   });
   const [role, setRole] = useState("role");
 
+  useEffect(() => {
+    console.log(firstName, lastName, password, email, role);
+  }, [firstName, lastName, password, email, role]);
   const getIsFormValid = () => {
+    // Implement this function
     return (
       firstName &&
+      lastName &&
       validateEmail(email) &&
       password.value.length >= 8 &&
       role !== "role"
@@ -30,7 +35,6 @@ const SignUp = () => {
   const clearForm = () => {
     setFirstName("");
     setLastName("");
-    setEmail("");
     setPassword({
       value: "",
       isTouched: false,
@@ -46,15 +50,18 @@ const SignUp = () => {
   };
 
   return (
-    <div className="SignUP">
+    <div className="App">
       <form onSubmit={handleSubmit}>
         <fieldset>
           <h2>Sign Up</h2>
           <div className="Field">
+            {" "}
+            {/* First Name */}
             <label>
               First name <sup>*</sup>
             </label>
             <input
+              type="text"
               value={firstName}
               onChange={(e) => {
                 setFirstName(e.target.value);
@@ -63,8 +70,10 @@ const SignUp = () => {
             />
           </div>
           <div className="Field">
+            {/* Last Name */}
             <label>Last name</label>
             <input
+              type="text"
               value={lastName}
               onChange={(e) => {
                 setLastName(e.target.value);
@@ -73,10 +82,12 @@ const SignUp = () => {
             />
           </div>
           <div className="Field">
+            {/* Email */}
             <label>
               Email address <sup>*</sup>
             </label>
             <input
+              type="text"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -84,13 +95,14 @@ const SignUp = () => {
               placeholder="Email address"
             />
           </div>
+          {/* Password */}
           <div className="Field">
             <label>
               Password <sup>*</sup>
             </label>
             <input
-              value={password.value}
               type="password"
+              value={password.value}
               onChange={(e) => {
                 setPassword({ ...password, value: e.target.value });
               }}
@@ -103,6 +115,7 @@ const SignUp = () => {
               <PasswordErrorMessage />
             ) : null}
           </div>
+          {/* Role */}
           <div className="Field">
             <label>
               Role <sup>*</sup>
@@ -120,5 +133,6 @@ const SignUp = () => {
       </form>
     </div>
   );
-};
+}
+
 export default SignUp;
