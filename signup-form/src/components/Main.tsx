@@ -13,11 +13,6 @@ function Main() {
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </div>
-      {/* ) : (
-        <div className="loading">
-          <p>Loading...</p>
-        </div>
-      )} */}
       <div className="footer">{/* <Footer /> */}</div>
     </div>
   );
