@@ -21,3 +21,7 @@ npm i express
 ```
 
 define a `babelrc` file. It tells babel what presets it needs to use to make a sense of our code
+
+```bash
+{ "presets": ["@babel/preset-env", "@babel/preset-react"] }
+```
