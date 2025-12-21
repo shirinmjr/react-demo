@@ -1,5 +1,6 @@
 import express from "express";
 import React from "react";
+import { ServerStyleSheet } from "styled-components";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 import path from "path";
@@ -17,10 +18,13 @@ const app = express();
 app.use(express.static("./build", { index: false }));
 
 app.get("/*", (req, res) => {
+  const sheet = new ServerStyleSheet();
   const reactApp = renderToString(
-    <StaticRouter location={req.url}>
-      <App />
-    </StaticRouter>
+    sheet.collectStyles(
+      <StaticRouter location={req.url}>
+        <App />
+      </StaticRouter>
+    )
   );
 
   const templateFile = path.resolve("./build/index.html");
@@ -29,7 +33,9 @@ app.get("/*", (req, res) => {
       return res.status(500).send(err);
     }
     return res.send(
-      data.replace('<div id="root"></div>', `<div id="root">${reactApp}</div>`)
+      data
+        .replace('<div id="root"></div>', `<div id="root">${reactApp}</div>`)
+        .replace("{{styles}}", sheet.getStyleTags())
     );
   });
 
